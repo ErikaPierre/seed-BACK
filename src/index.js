@@ -19,11 +19,13 @@ async function main() {
 }
 
 //permet d'ouvrir l'API à des requêtes provenant de domaines différents.
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
 app.use(cors());
 
 //route test du port
 app.get("/", (req, res) => {
-  res.send("Welcome on Vinyle Corner API");
+  res.send("Welcome on API");
 });
 
 //ecoute du port
